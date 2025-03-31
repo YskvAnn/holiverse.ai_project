@@ -12,7 +12,7 @@ service = Service(driver_path)
 driver = webdriver.Chrome(service=service)
 
 # Открываем сайт
-driver.get("https://a.metaforce.app/news-portal/en")
+driver.get("https://b.metaforce.app/")
 
 # Выводим заголовок страницы
 print(driver.title)

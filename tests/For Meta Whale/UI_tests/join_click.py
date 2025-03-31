@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 driver = webdriver.Chrome()  # Используйте нужный WebDriver для вашего браузера
 
 # Открытие страницы
-driver.get("https://a.metaforce.app/")  # Замените на ваш URL
+driver.get("https://b.metaforce.app/")  # Замените на ваш URL
 
 # Устанавливаем явное ожидание
 wait = WebDriverWait(driver, 10)
@@ -22,7 +22,7 @@ button.click()
 
 # Находим элемент, который должен появиться после клика
 element_to_check = wait.until(
-    EC.visibility_of_element_located((By.CLASS_NAME, "modal-list"))  # Замените на локатор элемента
+    EC.visibility_of_element_located((By.CLASS_NAME, "modal-list"))
 )
 
 # Проверяем, что элемент стал видимым

@@ -11,11 +11,11 @@ driver = webdriver.Chrome()  # Если используется другой б
 driver.get("https://a.metaforce.app/")  # Укажите URL страницы
 
 # Устанавливаем явное ожидание для элементов
-wait = WebDriverWait(driver, 15)
+wait = WebDriverWait(driver, 10)
 
 # Находим кнопку "About" с использованием явного ожидания
 scroll_button = wait.until(
-    EC.element_to_be_clickable((By.LINK_TEXT, "About"))
+    EC.element_to_be_clickable((By.LINK_TEXT, "Roadmap"))
 )
 
 # Кликаем на кнопку
@@ -23,7 +23,7 @@ scroll_button.click()
 
 # Ожидаем, пока целевой элемент станет доступным на странице (можно ожидать его появление или видимость)
 target_element = wait.until(
-    EC.presence_of_element_located((By.CLASS_NAME, "landing-paragraph-size-40"))
+    EC.presence_of_element_located((By.CLASS_NAME, "landing-container"))
 )
 
 # Прокручиваем страницу к целевому элементу с использованием JavaScript
