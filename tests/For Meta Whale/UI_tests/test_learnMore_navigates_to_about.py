@@ -11,7 +11,7 @@ try:
     time.sleep(5)
 
     # нахожу и кликаю на элемент
-    product_item = driver.find_element(By.CSS_SELECTOR, "")
+    product_item = driver.find_element(By.CSS_SELECTOR, "a.btn.btn__default.btn__secondary")
     driver.execute_script("arguments[0].click();", product_item)
     time.sleep(5)
 
@@ -21,7 +21,7 @@ try:
 
     # получаю URL нового окна и сравниваю с ожидаемым
     current_url = driver.current_url
-    if current_url == "https://b.metaforce.app/news-portal":
+    if current_url == "https://b.metaforce.app/about":
         print("URL соответствует ожидаемому")
     else:
         print("URL не соответствует ожидаемому")

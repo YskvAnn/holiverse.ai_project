@@ -11,9 +11,9 @@ try:
     time.sleep(5)
 
     # нахожу и кликаю на элемент
-    product_item = driver.find_element(By.CSS_SELECTOR, "")
+    product_item = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div[1]/section[6]/div/div[2]/div")
     driver.execute_script("arguments[0].click();", product_item)
-    time.sleep(5)
+    time.sleep(7)
 
     # получаю список всех окон и переключаюсь на новое окно
     #windows = driver.window_handles
@@ -21,7 +21,7 @@ try:
 
     # получаю URL нового окна и сравниваю с ожидаемым
     current_url = driver.current_url
-    if current_url == "https://b.metaforce.app/news-portal":
+    if current_url == "https://b.metaforce.app/web3info":
         print("URL соответствует ожидаемому")
     else:
         print("URL не соответствует ожидаемому")
