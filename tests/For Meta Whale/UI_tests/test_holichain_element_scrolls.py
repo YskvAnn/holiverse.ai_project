@@ -7,15 +7,16 @@ driver.maximize_window()
 driver.get("https://b.metaforce.app/")
 
 # нахожу и кликаю на кнопку + время на прокрутку
-scroll_button = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/header/ul/li[3]/a")
+scroll_button = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/header/ul/li[5]/a")
 scroll_button.click()
-time.sleep(10)
+time.sleep(5)
 
 # h2
-target_element = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div[1]/section[3]/div[1]/div[2]/div/h2")
+target_element = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div[1]/section[5]/div[1]/div[2]/div/h2")
 
 current_scroll_position = driver.execute_script("return window.scrollY") # получаю текущую позицию страницы
 element_position = target_element.location['y']
+
 driver.execute_script("arguments[0].scrollIntoView();", target_element)
 time.sleep(5)
 
