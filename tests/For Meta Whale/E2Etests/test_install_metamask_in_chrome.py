@@ -24,5 +24,3 @@ driver.get("https://b.metaforce.app/Home")
 # 1. Переключиться на окно MetaMask (всплывающее окно)
 # 2. Подтвердить подключение кошелька
 # 3. Вернуться на сайт
-
-# ... Здесь можно использовать driver.window_handles, driver.switch_to, .click() и т.д.
