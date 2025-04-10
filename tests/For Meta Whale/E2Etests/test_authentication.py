@@ -4,20 +4,31 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 import time
+import json
 
 options = Options()
 options.headless = False
 
 
 service = Service(ChromeDriverManager().install())
-remember_token = '$2y$10$EYDUjmAK6AqmzLGPjOwEIO23GUAmqyz/ueHkSc8TgtqQb1lJj.ADi'
+remember_token = '$2y$10$AaNbRxiZDY58kfL6tcs8LukTtOdZgJTQviGiVyZuRRv8yhu2KK9NW'
 
 headers = {
     'Authorization': f'Bearer {remember_token}'
 }
+data = {"force_remember_token": remember_token}
+
+with open("local_storage.json", "w") as f:
+    json.dump(data, f)
+
+with open("local_storage.json", "r") as f:
+    loaded_data = json.load(f)
+
+print(loaded_data)
+
 
 driver = webdriver.Chrome(service=service, options=options)
-driver.get('https://meta-whale.com/Home')
+driver.get('https://b.metaforce.app/Home')
 
 time.sleep(10)
 try:
